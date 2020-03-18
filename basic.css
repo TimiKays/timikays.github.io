@@ -28,6 +28,11 @@ a{
 	color: #1e70d5;
 }
 
+p{
+	
+	white-space: pre;
+}
+
 
 h1 {
 	color:#ffffff;
