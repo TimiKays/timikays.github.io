@@ -4,99 +4,55 @@
 <head>
     <title>timikays 个人主页</title>
     <meta charset="utf-8" />
-    <meta name="description" content="timikays的个人主页，介绍工作技能和个人兴趣等。"/>
+    <meta name="description" content="timikays的个人主页，介绍工作技能和个人兴趣等。" />
     <meta name="keywords" content="timikays,timikays个人主页，timikays主页" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="TQ"/>
-    <meta name="generator" content="Visual Studio Code 1.43.0"/>
+    <meta name="author" content="TQ" />
+    <meta name="generator" content="Visual Studio Code 1.43.0" />
     <!--插入外部样式表-->
     <link rel="stylesheet" type="text/css" href="basic.css" />
-    
 
+    
 </head>
 
 <body>
     <div id="topic">
         <h1>TimiKays</h1>
-        <!--第一次做网页呀，欢迎讨论，微信：TimiKays-->
+        <!--第一次做网页呀，欢迎讨论，我的微信：TimiKays-->
+
+        <p id="greeting">Hi~</p>
+        <script>
+            var date=new Date();
+            var hour = date.getHours();
+            var minutes=date.getMinutes();
+            var greeting ="你好";
+            if (hour < 18) {
+                percent=(hour/24).toFixed(2)*100
+                greeting = "你好呀，现在是"+hour+"点"+minutes+"啦，今天已经过去"+percent+"% 啦";
+            } else {
+                left=23-hour
+                greeting = "晚上好呀，已经"+hour+"点"+minutes+"啦，还差"+left+"个小时就要睡觉咯~";
+            }
+            document.getElementById("greeting").innerHTML = greeting;
+        </script>
     </div>
 
 
     <div class="content">
-        <h2>关于我</h2>
-
-        <blockquote>
-            <h3>简介</h3>
-
+        <h2>看一看</h2>
             <blockquote>
-                <p><img src="cat.jpg" width="35px" alt="٩(◕‿◕｡)۶ " />风一样的女纸</p>
-            </blockquote>
-            <h3>测试</h3>
-            <blockquote>
-                <script type="text/javascript">
-                    document.write("Hello World!")
-                </script>
-                <button type="button" onclick="document.getElementById('demo').innerHTML=Date()">
-                    点我
-                </button>
-                <p id="demo">
-
-                </p>
+                <!-- <a href="gallery.html">作品集</a><br/> -->
+                <a href="tools.html">小工具</a>
             </blockquote>
         </blockquote>
 
 
     </div>
+   
     <div class="content">
-        <h2>生活</h2>
-        <ul>
-            <h3>娱乐</h3>
-            <ul>
-                <li>
-                    <p>最近常听的歌：</p>
-                    <ul>
-                        <li>
-                            <a href="https://music.163.com/song?id=1297802566" target="_blank">《十年人间》 - 李常超</a>
-                        </li>
-                        <li>
-                            <a href="https://music.163.com/song?id=1376873330" target="_blank">《吹梦到西洲》 - 恋恋故人难</a>
-                        </li>
-                        <li>
-                            <a href="https://music.163.com/song?id=1303027215" target="_blank">《先生あのね》 - ミッション!
-                                健・康・第・イチ</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <p>王者荣耀</p>
-                    <ul>
-                        <li>
-                            最高段位：王者1星
-                        </li>
-                        <li>
-                            擅长位置排序：中，下，辅，野，上
-                        </li>
-                        <li>
-                            擅长英雄：貂蝉，娜可露露，白起，狂铁
-                        </li>
-                        <li>
-                            <a href="https://h5.kohsocialapp.qq.com/app/yxzj/statistics/historyseason/?toOpenid=owanlssbmgXRCMb5FiWPDEg-P1OE&areaId=4&serverId=4044&toRoleId=870128451&toRoleName=%E2%81%A2%E6%9C%88"
-                                target="_blank">查看战绩</a>
-                        </li>
-                    </ul>
-
-                </li>
-
-            </ul>
-        </ul>
-
-    </div>
-
-
-    <div class="content">
-        <h2>技能</h2>
+        <h2>没想好放什么</h2>
         <blockquote>
-            <h3>产品</h3>
+            <!-- <h3>产品</h3>
             <blockquote>
                 <p>需求分析</p>
 
@@ -116,10 +72,10 @@
                 </table>
 
                 <p>作品集</p>
-                <a href="gallery.html">去看看</a>
+                
 
 
-            </blockquote>
+            </blockquote> -->
 
         </blockquote>
     </div>

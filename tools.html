@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function toCelsius() {
+            f = document.getElementById("fah").value;
+            c = (5 / 9) * (f - 32);
+            document.getElementById("cel").value = c.toFixed(2);
+        }
+        function toFah() {
+            c = document.getElementById("cel").value;
+            f = c / (5 / 9) + 32;
+            document.getElementById("fah").value = f.toFixed(2);
+        }
+
+        function trimStr() {
+            //去除空格的方法
+            var str = document.getElementById("txt").value;
+            var del_txt = document.getElementById("del_txt").value;
+            var reg = new RegExp(del_txt, "g");
+            var arr = "";
+            var str2 = "";
+            arr = str.split("\n");
+            for (i in arr) {
+                arr_i=arr[i].replace(reg, "").trim()
+                if(arr_i==""){
+                    continue;
+                }else{
+                    str2=str2+arr_i+"\n"
+                }
+            }
+            document.getElementById("txt2").value = str2;
+        }
+    </script>
+</head>
+
+<body>
+    <h2>小工具</h2>
+
+    <h3>华氏度与摄氏度转换</h3>
+    华氏度：<input type="number" id="fah">
+    <button type="button" onclick="toCelsius()">查看摄氏度</button>
+    <br />
+    摄氏度：<input type="number" id="cel">
+    <button type="button" onclick="toFah()">查看华氏度</button>
+
+    <h3>去除一段文字的首尾空格</h3>
+    <textarea id="txt" rows="15" cols="50">把需要去空格的文字粘贴到这里</textarea><br />
+    还需要去掉？(*前加\)<input type="text" id="del_txt"" size=" 5">
+    <button type="button" onclick="trimStr()">去空格</button><br /><br />
+    <textarea id="txt2" rows="15" cols="50">结果</textarea>
+
+
+
+
+</body>
+
+</html>
