@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TimiKays 知识架构</title>
+    <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="js/echarts.js"></script>
+    <script type="text/javascript" src="knowledges.json"></script>
+</head>
+
+<body>
+    <!-- 装图表的容器 -->
+    <div id="main" style="width:100%;height:850px"></div>
+
+    <!-- 显示图表的js -->
+    <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('main'));
+        //数据
+        var categories = [{ name: '了解' }, { name: '已实践' }, { name: '熟练' }];
+        // var datas=datas;
+        var datas =names;
+        var linkss=links;
+
+        option = {
+            // 图的标题
+            title: {
+                text: 'TimiKays 知识架构'
+            },
+            // 鼠标悬浮的提示框的配置
+            tooltip: {
+                formatter: function (x) {
+                    return x.data.des;
+                }
+            },
+            color:['#80aba9 ','#007bbb ','#bf242a'],
+
+            // 工具箱
+            toolbox: {
+                // 显示工具箱
+                show: true,
+                feature: {
+                    //不知道是啥
+                    mark: {
+                        show: true
+                    },
+                    // 还原
+                    restore: {
+                        show: true
+                    },
+                    // 保存为图片
+                    saveAsImage: {
+                        show: true
+                    },
+                    //框选功能，不知道为啥没用
+                    brush: {
+                        type: 'rect'
+                    }
+                }
+            },
+
+            //图例，如果要显示，就把注释的return放开
+            legend: [{
+                // selectedMode: 'single',
+                data: categories.map(function (a) {
+                    return a.name;
+                })
+            }],
+
+            // 数据集
+            // dataset: {
+            //     source: [
+            //         ['product', '2015', '2016', '2017'],
+            //         ['Matcha Latte', 43.3, 85.8, 93.7],
+            //         ['Milk Tea', 83.1, 73.4, 55.1],
+            //         ['Cheese Cocoa', 86.4, 65.2, 82.5],
+            //         ['Walnut Brownie', 72.4, 53.9, 39.1]
+            //     ]
+            // },
+
+            //图
+            series: [{
+                type: 'graph', // 类型:关系图
+                layout: 'force', //图的布局，类型为力导图
+                symbol: ['circle'], //节点的样式
+                symbolSize: 20,
+                roam: true, // 是否开启鼠标缩放和平移漫游。默认不开启
+                draggable: true, //可以拖动
+                focusNodeAdjacency: true, //突出鼠标所在节点及临近节点
+                categories: categories, //类型
+                
+
+                //配置力引导布局
+                force: {
+                    repulsion: 500,  //节点之间的斥力因子
+                    edgeLength: [10, 50], //节点之间的距离
+                    gravity: 0.2, //引力因子
+                    layoutAnimation: true //力引导动画，节点较多时不建议关闭
+                },
+
+                //公共线条样式
+                lineStyle: {
+                    normal: {
+                        width: 1,
+                        color: '#999',
+                        type: 'dotted', //类型'solid''dashed''dotted'
+                        curveness: 0.1  //曲度，0~1
+                    }
+                },
+
+                //文字标签??和Label有啥区别
+                // edgeLabel: {
+                //     normal: {
+                //         show: true,
+                //         textStyle: {
+                //             fontSize: 30
+                //         },
+                //         formatter: function (x) {
+                //             return x.data.name;
+                //         }
+                //     }
+                // },
+
+                //标签样式
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'bottom',
+                        textStyle: { fontSize: 14, }
+                    }
+                },
+
+                // 数据
+                data:datas ,
+
+                //连线
+                links: linkss,
+
+            }]
+        };
+        myChart.setOption(option);
+    </script>
+</body>
+
+</html>
