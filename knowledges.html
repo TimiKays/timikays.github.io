@@ -167,27 +167,29 @@
             },
             media: [
                 {
-                    query: { maxAspectRatio: 1 },   // 当长宽比小于1时(竖屏)。
+                    // 当长宽比小于1时(竖屏)。
+                    query: { maxAspectRatio: 1 },   
                     option: {       // 这里写此规则满足下的option。
                         legend:
                         {
                             top: '30px',
-                            orient: 'horizontal'
+
                         },
-                        title: { x: 'center', top: 0 },
-                        series:{}
+                        title: { x: 'center'},
+                        series:[{draggable: false,}]
 
                     }
 
                 }, {
+                    //宽屏时
                     option: {
                         legend:
                         {
-
                             top: 0,
-                            orient: 'horizontal'
+
                         },
-                        title: { left: 0, top: 0 }
+                        title: { left: 0 },
+                        series:[{draggable: true,}]
 
                     }
                 }
