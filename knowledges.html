@@ -168,15 +168,19 @@
             media: [
                 {
                     // 当长宽比小于1时(竖屏)。
-                    query: { maxAspectRatio: 1 },   
+                    query: { maxAspectRatio: 1 },
                     option: {       // 这里写此规则满足下的option。
-                        legend:
-                        {
-                            top: '30px',
-
-                        },
-                        title: { x: 'center'},
-                        series:[{draggable: false,}]
+                        legend: { top: '30px', },
+                        title: { x: 'center' },
+                        series: [{
+                                draggable: false,
+                                focusNodeAdjacency: false,
+                                force: {
+                                    repulsion: 400,  //节点之间的斥力因子
+                                    edgeLength: [20, 30], //节点之间的距离
+                                    gravity: 0.3,
+                                }
+                            }]
 
                     }
 
@@ -184,12 +188,19 @@
                     //宽屏时
                     option: {
                         legend:
-                        {
-                            top: 0,
-
-                        },
+                            { top: 0, },
                         title: { left: 0 },
-                        series:[{draggable: true,}]
+                        series: [
+                            {
+                                draggable: true,
+                                focusNodeAdjacency: true,
+                                force: {
+                                    repulsion: 500,  //节点之间的斥力因子
+                                    edgeLength: [10, 50], //节点之间的距离
+                                    gravity: 0.2,
+                                }
+                            }
+                        ]
 
                     }
                 }
