@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--css-->
+    <link rel="stylesheet" type="text/css" href="header_menu.css" />
+    <script>
+        window.onload = function () {
+            
+        };
+        //使父页面跳转
+        function goto(url){
+            window.parent.location.href=url;
+        }
+    </script>
+</head>
+
+<body>
+    <div id='header'>
+        <h1>TimiKays</h1>
+        <p id="greeting">Hi~</p>
+        <script>
+            // 招呼语
+            var date = new Date();
+            var hour = date.getHours();
+            var minutes = date.getMinutes();
+            var greeting = "你好";
+            if (hour < 18) {
+                percent = (hour / 24).toFixed(2) * 100
+                greeting = "你好呀，现在是" + hour + "点" + minutes + "啦，今天已经过去" + percent + "% 啦";
+            } else {
+                left = 23 - hour
+                greeting = "晚上好呀，已经" + hour + "点" + minutes + "啦，还差" + left + "个小时就要睡觉咯~";
+            }
+            document.getElementById("greeting").innerHTML = greeting;
+        </script>
+    </div>
+
+    <div id="menu">
+        <ul id="navList">
+            <li>
+                <a onclick="goto('../index.html')">首页</a>
+            </li>
+            
+            <li>
+                <a onclick="goto('../tools.html')">小工具</a>
+            </li>
+        </ul>
+    </div>
+
+   
+</body>

@@ -4,28 +4,27 @@
 <head>
     <title>TimiKays 知识架构</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- css -->
+    <link rel="stylesheet" type="text/css" href="css/other.css" />
+<!-- js -->
     <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
     <script type="text/javascript" src="js/echarts.js"></script>
-    <script type="text/javascript" src="knowledges.json"></script>
-    <link rel="stylesheet" type="text/css" href="other.css" />
-    <script>
-
-        //根据浏览器宽高动态改变div的宽高，两种方法都可以
-        $(function () {
-            $(window).resize(function () {
-                var cliWidth = document.body.clientWidth; //浏览器宽
-                var cliHeight = document.body.clientHeight;//浏览器高
-                $('#main').width(cliWidth);
-                $("#main").height(cliHeight);
-                // $('#main').css('width',cliWidth);
-                // $("#main").css('height',cliHeight);
-                myChart.resize();
-            })
-        });
-
-
-
-    </script>
+    <script type="text/javascript" src="source/knowledges.json"></script>
+    <script type="text/javascript" src="js/selfsuit.js"></script>
+<script>
+    $(function () {
+    $(window).resize(function () {
+        var cliWidth = document.body.clientWidth; //浏览器宽
+        var cliHeight = document.body.clientHeight;//浏览器高
+        console.log('宽'+cliWidth+',高'+cliHeight)
+        $('#main').width(cliWidth);
+        $("#main").height(cliHeight);
+        // $('#main').css('width',cliWidth);
+        // $("#main").css('height',cliHeight);
+        myChart.resize();
+    })
+});
+</script>
 </head>
 
 <body>
@@ -173,14 +172,14 @@
                         legend: { top: '30px', },
                         title: { x: 'center' },
                         series: [{
-                                draggable: false,
-                                focusNodeAdjacency: false,
-                                force: {
-                                    repulsion: 400,  //节点之间的斥力因子
-                                    edgeLength: [20, 30], //节点之间的距离
-                                    gravity: 0.3,
-                                }
-                            }]
+                            draggable: false,
+                            focusNodeAdjacency: false,
+                            force: {
+                                repulsion: 400,  //节点之间的斥力因子
+                                edgeLength: [20, 30], //节点之间的距离
+                                gravity: 0.3,
+                            }
+                        }]
 
                     }
 

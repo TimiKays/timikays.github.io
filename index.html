@@ -9,83 +9,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="TQ" />
     <meta name="generator" content="Visual Studio Code 1.43.0" />
-    <!--插入外部样式表-->
-    <link rel="stylesheet" type="text/css" href="index.css" />
 
-    
+    <!--css-->
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+    <!-- js -->
+    <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+
 </head>
 
 <body>
-    <div id="topic">
-        <h1>TimiKays</h1>
-        <!--第一次做网页呀，欢迎讨论，我的微信：TimiKays-->
+    <div id="main" >
+        <!-- 标题和菜单模板 -->
+        <iframe  src="pattern/header_menu.html" frameborder="no" scrolling="no"></iframe>
 
-        <p id="greeting">Hi~</p>
-        <script>
-            var date=new Date();
-            var hour = date.getHours();
-            var minutes=date.getMinutes();
-            var greeting ="你好";
-            if (hour < 18) {
-                percent=(hour/24).toFixed(2)*100
-                greeting = "你好呀，现在是"+hour+"点"+minutes+"啦，今天已经过去"+percent+"% 啦";
-            } else {
-                left=23-hour
-                greeting = "晚上好呀，已经"+hour+"点"+minutes+"啦，还差"+left+"个小时就要睡觉咯~";
-            }
-            document.getElementById("greeting").innerHTML = greeting;
-        </script>
-    </div>
-
-
-    <div class="content">
-        <h2>看一看</h2>
+        <!-- 内容 -->
+        <div id='container'>
+            <h2>看一看</h2>
             <blockquote>
                 <!-- <a href="gallery.html">作品集</a><br/> -->
-                <a href="tools.html">小工具</a>
                 <a href="knowledges.html">知识架构</a>
             </blockquote>
-        </blockquote>
-
-
-    </div>
-   
-    <div class="content">
-        <h2>没想好放什么</h2>
-        <blockquote>
-            <!-- <h3>产品</h3>
-            <blockquote>
-                <p>需求分析</p>
-
-                <table>
-
-                    <tr>
-                        <td class="head">行业分析</td>
-                        <td>行业环境，包括行业的经济、政策、社会、技术环境；<br />行业的现状，包括行业定义、用户分析、投资趋势、产品概况、细分领域产品分析</td>
-                    </tr>
-                    <tr>
-                        <td class="head">产品分析</td>
-                        <td>产品背景与简介，产品分析目的；<br />
-                            产品定位，用户分析，使用场景，产品特色， 商业模式；<br />
-                            产品结构分析，功能分析，交互体验。
-                        </td>
-                    </tr>
-                </table>
-
-                <p>作品集</p>
-                
-
-
-            </blockquote> -->
-
-        </blockquote>
-    </div>
-
-
-    <span class="totop">
-        <a href="#topic">顶部</a>
-    </span>
-
+    
+    
+            <div class="content">
+                <h2>没想好放a 什么</h2>
+                <h2>没想好放什么</h2>
+                <h2>没想好放什么</h2>
+                <h2>没想好放什么</h2>
+                <h2>没想好放什么</h2>
+                <h2>没想好放a 什么</h2>
+                <h2>没想好放什么</h2>
+                <h2>没想好放什么</h2>
+                <h2>没想好放什么</h2>
+                <h2>没想好放什么</h2>
+                <h2>没想好放a 什么</h2>
+                <h2>没想好放什么</h2>
+                <h2>没想好放什么</h2>
+                <h2>没想好放什么</h2>
+                <h2>没想好放什么</h2>
+                <h2>没想好放a 什么</h2>
+                <h2>没想好放什么</h2>
+                <h2>没想好放什么</h2>
+                <h2>没想好放什么</h2>
+                <h2>没想好放什么</h2>
+            </div>
+    
+    
+            <nav>
+                <a href="#main">顶部</a>
+            </nav>
+               
+            
+        </div>
+        
 </body>
-
-</html>
